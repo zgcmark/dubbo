@@ -56,7 +56,7 @@ public abstract class AbstractConfig implements Serializable {
     protected static final Logger logger = LoggerFactory.getLogger(AbstractConfig.class);
     private static final long serialVersionUID = 4267533505537413570L;
 
-    /**
+    /** 遗留属性元素
      * The legacy properties container
      */
     private static final Map<String, String> LEGACY_PROPERTIES = new HashMap<String, String>();
@@ -65,7 +65,7 @@ public abstract class AbstractConfig implements Serializable {
      * The suffix container
      */
     private static final String[] SUFFIXES = new String[]{"Config", "Bean", "ConfigBase"};
-
+    //这个地方应该是在兼容老的版本，所以我们不用看了
     static {
         LEGACY_PROPERTIES.put("dubbo.protocol.name", "dubbo.service.protocol");
         LEGACY_PROPERTIES.put("dubbo.protocol.host", "dubbo.service.server.host");

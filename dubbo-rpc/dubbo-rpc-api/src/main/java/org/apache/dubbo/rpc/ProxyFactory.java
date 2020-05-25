@@ -28,7 +28,7 @@ import static org.apache.dubbo.rpc.Constants.PROXY_KEY;
 @SPI("javassist")
 public interface ProxyFactory {
 
-    /**
+    /** 创建一个代理，在引用服务的时候 使用，
      * create proxy.
      *
      * @param invoker
@@ -46,7 +46,7 @@ public interface ProxyFactory {
     @Adaptive({PROXY_KEY})
     <T> T getProxy(Invoker<T> invoker, boolean generic) throws RpcException;
 
-    /**
+    /**  创建一个Invoker,在暴露服务的时候使用
      * create invoker.
      *
      * @param <T>

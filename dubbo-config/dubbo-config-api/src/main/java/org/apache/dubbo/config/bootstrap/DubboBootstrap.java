@@ -182,7 +182,7 @@ public class DubboBootstrap extends GenericEventListener {
     private DubboBootstrap() {
         configManager = ApplicationModel.getConfigManager();
         environment = ApplicationModel.getEnvironment();
-
+        //启动的时候先加一个关闭的hook的钩子
         DubboShutdownHook.getDubboShutdownHook().register();
         ShutdownHookCallbacks.INSTANCE.addCallback(new ShutdownHookCallback() {
             @Override

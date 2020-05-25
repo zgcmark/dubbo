@@ -650,6 +650,7 @@ public class ExtensionLoader<T> {
                     String property = getSetterProperty(method);
                     Object object = objectFactory.getExtension(pt, property);
                     if (object != null) {
+                        //这个地方是执行依赖注入
                         method.invoke(instance, object);
                     }
                 } catch (Exception e) {
